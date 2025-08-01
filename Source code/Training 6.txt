@@ -1,0 +1,484 @@
+[#Field : default]
+	
+	Add		: Tooltip	: $$DescName
+	
+[#Form: SalesColor]
+ 
+	Option 			: Fromone  : @@IsSales 
+	
+
+[!Form: Fromone] 
+	
+	Delete			: Print			:  Printed Invoice
+	Add 			: print 		:  MainReport
+ 
+[Report: MainReport]
+
+	Title			: "M-"	
+	Use				: Printed Invoice
+	Delete			: Form
+	Add				: Form		: M shipping form
+	Object			: Voucher	: ##VoucherID
+	Set 			: SVPrintOrientation: $$SysName:Portrai
+	
+[Form: M shipping form]
+	
+	Top Part		: Top_Part_0001
+	Part			: Part_00001,Part_00002,Part_00003
+	Bottom Part		: Bottom_part0001
+	
+[Part: Top_Part_0001]
+	
+	Line			: Top_Part_0001_L1,Top_Part_0001_L2,Top_Part_0001_L3,Top_Part_0001_L4,Top_Part_0001_L5,Top_Part_0001_L6
+	
+[Line: Top_Part_0001_L1]
+	
+	Space Top		: 4
+	Field			: Top_Part_0001_L1_Fi1
+	
+[Field: Top_Part_0001_L1_Fi1]
+	
+	Set as			: "M O R G A N   M A X W E L L"
+	Align			: Center	
+	Full Width		: Yes
+	Style			: /*Large Bold*/ Large Serif Bold
+	
+[Line: Top_Part_0001_L2]
+	
+	Space Bottom	: 3
+	Field			: Top_Part_0001_L2_Fi2
+	
+[Field: Top_Part_0001_L2_Fi2]
+	
+	Set as			: "D e s i g n   &  B r a n d i n g"
+	Align			: Center
+	Full Width		: Yes
+	Style			: Small Serif Bold
+	
+[Line: Top_Part_0001_L3]
+	
+	Space Top		: 5
+	Field			: Top_Part_0001_L3_Fi3,Top_Part_0001_L3_Fi04,/*Top_Part_0001_L3_Fi004*/
+	
+[Field: Top_Part_0001_L3_Fi3]
+	
+	Set as			: "Issued To:"
+	Style			: Normal Bold
+	Width			: 15
+	Align			: Right
+	
+[Field: Top_Part_0001_L3_Fi04]
+	
+	Set as			: "INVOICE NO :           01234"
+	Space Left		: 53
+	Align			: Left
+	Style			: Normal Bold
+	
+;[Field: Top_Part_0001_L3_Fi004]
+;
+;	Set as			: "DATE   :"
+;	Width			: 19
+;	Align			: Right
+				
+[Line: Top_Part_0001_L4]
+	
+	Space Top		: 0.10
+	Field			: Top_Part_0001_L4_Fi4,Top_Part_0001_L4_Fi04
+	
+[Field: Top_Part_0001_L4_Fi4]
+	
+	Set as			: "Jonathan Patterson"
+	Width			: 20.80
+	Align			: Right
+	;Style			: Normal Bold
+	
+[Field: Top_Part_0001_L4_Fi04]
+	
+	Set as			: "DATE  :      11.02.2030"
+	Space Left		: 52
+	Align			: Right
+	
+[Line: Top_Part_0001_L5]
+	
+	Space Top		: 0.10
+	Field			: Top_Part_0001_L5_Fi5,Top_Part_0001_L5_Fi05
+	
+[Field: Top_Part_0001_L5_Fi05]
+	
+	Set as			: "DUE DATE:      11.03.2030"
+	Space Left		: 54
+	Align			: Right
+	
+[Field: Top_Part_0001_L5_Fi5]
+	
+	Set as			: "Liceria & Co."
+	Width			: 15.91
+	Align			: Right
+	
+[Line: Top_Part_0001_L6]
+	
+	Space Top		: 0.10
+	Space Bottom	: 10
+	Field			: Top_Part_0001_L6_Fi6
+	
+[Field: Top_Part_0001_L6_Fi6]
+	
+	Set as			: "123 Anywhere St., Any City"
+	Width			: 26
+	Align			: Right
+	
+[Part: Part_00001]
+	
+	Part			: Part_DS_001
+	
+[Part: Part_DS_001]
+	
+	Height			: 25.90 % Page
+	Width			: 100 % Page
+	Border			: Thin Box
+	Line			: Part_00001_L1,Part_00001_L2,Part_00001_L3,Part_00001_L4,Part_00001_L5,Part_00001_L6,;Part_00001_L7
+	Common Border	: Yes
+	
+[Line: Part_00001_L1]
+	
+	Space Top		: 1
+	Field			: Part_00001_L1_Fi1,Part_00001_L1_Fi2,Part_00001_L1_Fi3,Part_00001_L1_Fi4
+	Space Bottom	: 0.9
+	Border			: Thin Bottom
+	
+[Field: Part_00001_L1_Fi1]
+	
+	Set as			: "DESCRIPTION"
+	Width			: 18
+	Align			: Center
+	Style			: Normal Bold
+	Border			: Thin Right
+	
+[Field: Part_00001_L1_Fi2]
+	
+	Set as			: "UNIT PRICE"
+	Space Left		: 19
+	Align			: Center
+	Style			: Normal Bold
+	Border			: Thin Right
+	
+[Field: Part_00001_L1_Fi3]
+	
+	Set as			: "QTY"
+	Space Left		: 13
+	Align			: Center
+	Style			: Normal Bold
+	Border			: Thin Right
+	
+[Field: Part_00001_L1_Fi4]
+	
+	Set as			: "TOTAL"
+	Space Left		: 15
+	Style			: Normal Bold
+	
+	
+[Line: Part_00001_L2]
+	
+	Space Top		: 1.50
+	Space Bottom	: 0.50
+	Border			: Thin Bottom
+	Field			: Part_00001_L2_Fi1,Part_00001_L2_Fi2,Part_00001_L2_Fi3,Part_00001_L2_Fi4
+	
+[Field: Part_00001_L2_Fi1]
+	
+	Set as			: "Brand Consultation"
+	Width			: 17
+	Align			: Right
+	
+[Field: Part_00001_L2_Fi2]
+	
+	Set as			: "100"
+	Space Left		: 23
+	Align			: Right
+	
+[Field: Part_00001_L2_Fi3]
+	
+	Set as			: "1"
+	Space Left		: 17.50
+	Align			: Right
+	
+[Field: Part_00001_L2_Fi4]
+	
+	Set as			: "$ 100"
+	Space Left		: 16.90
+	Align			: Right
+	
+[Line: Part_00001_L3]
+	
+	Space Top		: 1.50
+	Space Bottom	: 0.50
+	Border			: Thin Bottom
+	Field			: Part_00001_L3_Fi1,Part_00001_L3_Fi2,Part_00001_L3_Fi3,Part_00001_L3_Fi4
+	
+[Field: Part_00001_L3_Fi1]
+	
+	Set as			: "Logo Design"
+	Width			: 14
+	Align			: Right
+	
+[Field: Part_00001_L3_Fi2]
+	
+	Set as			: "100"
+	Space Left		: 25.99
+	Align			: Right
+	
+[Field: Part_00001_L3_Fi3]
+	
+	Set as			: "1"
+	Space Left		: 17.50
+	Align			: Right
+	
+[Field: Part_00001_L3_Fi4]
+	
+	Set as			: "$ 100"
+	Space Left		: 16.90
+	Align			: Right
+	
+[Line: Part_00001_L4]
+	
+	Space Top		: 1.50
+	Space Bottom	: 0.50
+	Border			: Thin Bottom
+	Field			: Part_00001_L4_Fi1,Part_00001_L4_Fi2,Part_00001_L4_Fi3,Part_00001_L4_Fi4
+	
+[Field: Part_00001_L4_Fi1]
+	
+	Set as			: "Website Design"
+	Width			: 15
+	Align			: Right
+	
+[Field: Part_00001_L4_Fi2]
+	
+	Set as			:"100"
+	Space Left		: 25
+	Align			: Right
+	
+[Field: Part_00001_L4_Fi3]
+	
+	Set as			: "1"
+	Space Left		: 17.50
+	Align			: Right
+	
+[Field: Part_00001_L4_Fi4]
+	
+	Set as			: "$ 100"
+	Space Left		: 16.90
+	Align			: Right
+	
+[Line: Part_00001_L5]
+	
+	Space Top		: 1.50
+	Space Bottom	: 0.50
+	Border			: Thin bottom
+	Field			: Part_00001_L5_Fi1,Part_00001_L5_Fi2,Part_00001_L5_Fi3,Part_00001_L5_Fi4
+	
+[Field: Part_00001_L5_Fi1]
+	
+	Set as			: "Social Media Templates"
+	Width			: 17
+	Align			: Right
+	
+[Field: Part_00001_L5_Fi2]
+	
+	Set as			: "100"
+	Space Left		: 23
+	Align			: Right
+	
+[Field: Part_00001_L5_Fi3]
+	
+	Set as			: "1"
+	Space Left		: 17.50
+	Align			: Right	
+	
+[Field: Part_00001_L5_Fi4]
+	
+	Set as			: "$ 100"
+	Space Left		: 16.90
+	Align			: Right
+	
+[Line: Part_00001_L6]
+	
+	Space Top		: 1.50
+;	Space Bottom	: 0.50
+;	Border			: Thin Bottom
+	Field			: Part_00001_L6_Fi1,Part_00001_L6_Fi2,Part_00001_L6_Fi3,Part_00001_L6_Fi4
+
+	
+[Field: Part_00001_L6_Fi1]
+	
+	Set as			: "Brand Manual"
+	Width			: 14.50
+	Align			: Right
+	
+[Field: Part_00001_L6_Fi2]
+	
+	Set as			: "100"
+	Space Left		: 25.50
+	Align			: Right
+	
+[Field: Part_00001_L6_Fi3]
+	
+	Set as			: "1"
+	Space Left		: 17.50
+	Align			: Right
+	
+[Field: Part_00001_L6_Fi4]
+	
+	Set as			: "$ 100"
+	Space Left		: 16.50
+	Align			: Right
+	Align			: Right
+	
+	
+[Part: Part_00002]
+	
+	Height			: 3.50 % Page
+	Width			: 100 % Page
+	Border			: Thin Bottom
+	Line			: Part_00002_L1,;Part_00002_L2
+	
+[Line: Part_00002_L1]
+	
+	Space Top		: 1
+	Field			: Part_00002_L1_Fi1,Part_00002_L1_Fi2
+	Border			: Thin Left
+	
+[Field: Part_00002_L1_Fi1]
+	
+	Set as			: "SUBTOTAL"
+	Width			: 14
+	Align			: Right
+	Style			: Normal Bold
+	
+[Field: Part_00002_L1_Fi2]
+	
+	Set as			: "$500"
+	Space Left		: 64.80
+	Align			: Right
+	Style			: Normal Bold
+	Space Right		: Thin Right
+	
+[Part: Part_00003]
+	
+	Line		: Part_00003_L1
+	
+[Line: Part_00003_L1]
+	
+	Space Top	: 1
+	Field		: Part_00003_L1_Fi1,Part_00003_L1_Fi2
+	
+[Field: Part_00003_L1_Fi1]
+	
+	Set as		: "TAX"
+	Width		: 75
+	Align		: Right
+	
+	
+[Field: Part_00003_L1_Fi2]
+	
+	Set as		: "10 %"
+	Space Left	: 4.50
+	Align		: Right
+	
+[Part: Bottom_part0001]
+	
+	Line		: Bottom_part0001_L1,Bottom_part0001_L2
+	
+[Line: Bottom_part0001_L1]
+	
+	Space Top	: 1
+	Field		: Bottom_part0001_L1_Fi1,Bottom_part0001_L1_Fi2
+	
+[Field: Bottom_part0001_L1_Fi1]
+	
+	Set as		: "BANK DETAILS"
+	Width		: 15
+	Align		: Right
+	Style		: Normal Bold
+	
+[Field: Bottom_part0001_L1_Fi2]
+	
+	Set as		: "THANK YOU"
+	Align		: Right
+	Space Left	: 75
+	Style		: Normal Bold
+	
+[Line: Bottom_part0001_L2]
+	
+	Space Top	: 0.50
+	Field		: Bottom_part0001_L2_Fi2
+	
+[Field: Bottom_part0001_L2_Fi2]
+	
+	Set as		: "Borcele Bank"
+	Width		: 12.80
+	Align		: Right
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+;[Line: Part_00002_L2]
+;	
+;	Space Top		: 10
+;	Field			: Part_00002_L2_Fi1
+;	
+;[Field: Part_00002_L2_Fi1]
+;	
+;	Set as			: "TAX"
+;	Space Left		: 50
+;	Align			: Right
+;	Style			: Normal Bold
+	
+	
+	
+
+;[Line: Part_00001_L7]
+;	
+;	Space Top		: 3
+;	Space Bottom	: 0.80
+;	Border			: Thin Bottom 
+;	Field			: Part_00001_L7_Fi1
+;	
+;[Field: Part_00001_L7_Fi1]
+;	
+;	Set as			: "SUBTOTAL"
+;	Width			: 15
+;	
+
+	
+	
+	
+	
+	
+
+	
+	
+	
