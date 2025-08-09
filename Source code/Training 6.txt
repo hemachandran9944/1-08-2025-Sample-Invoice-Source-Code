@@ -23,110 +23,281 @@
 	
 [Form: M shipping form]
 	
-	Top Part		: Top_Part_0001
-	Part			: Part_00001,Part_00002,Part_00003
-	Bottom Part		: Bottom_part0001
+	Top Part		: Top_Part_0001,Top_Part_0002
+	Part			: Part_00001
+	Bottom Part		: Part_00002,Part_00003,Bottom_part00011
 	
 [Part: Top_Part_0001]
 	
-	Line			: Top_Part_0001_L1,Top_Part_0001_L2,Top_Part_0001_L3,Top_Part_0001_L4,Top_Part_0001_L5,Top_Part_0001_L6
+	 Part			:  Part0001
+	 
+[Part: Part0001]
 	
-[Line: Top_Part_0001_L1]
+	Line			: Part0001_L1,Part0001_L2
+	
+[Line: Part0001_L1]
 	
 	Space Top		: 4
-	Field			: Top_Part_0001_L1_Fi1
+	Field			: Part0001_L1_Fi1
 	
-[Field: Top_Part_0001_L1_Fi1]
+[Field: Part0001_L1_Fi1]
 	
-	Set as			: "M O R G A N   M A X W E L L"
-	Align			: Center	
+	Set as			: $companyName
+	Align			: Center
 	Full Width		: Yes
-	Style			: /*Large Bold*/ Large Serif Bold
+	Style			: Large Serif Bold
 	
-[Line: Top_Part_0001_L2]
+[Line: Part0001_L2]
 	
-	Space Bottom	: 3
-	Field			: Top_Part_0001_L2_Fi2
+	Space Top		: 0.50
+	Field			: Part0001_L2_Fi2
 	
-[Field: Top_Part_0001_L2_Fi2]
+[Field: Part0001_L2_Fi2]
 	
 	Set as			: "D e s i g n   &  B r a n d i n g"
 	Align			: Center
 	Full Width		: Yes
 	Style			: Small Serif Bold
+
+[Part: Top_Part_0002]
 	
-[Line: Top_Part_0001_L3]
+	 Left Part		:  Top_Part_LP0001
+	 Right Part		:  Top_Patr_RP0001
+	 
+[Part: Top_Part_LP0001]
 	
-	Space Top		: 5
-	Field			: Top_Part_0001_L3_Fi3,Top_Part_0001_L3_Fi04,/*Top_Part_0001_L3_Fi004*/
+	Line			:Top_Part_LP0001_L1,Top_Part_LP0001_L2,Top_Part_LP0001_L3,Top_Part_LP0001_L4;Top_Part_0001_L3,Top_Part_0001_L4,Top_Part_0001_L5,Top_Part_0001_L6
 	
-[Field: Top_Part_0001_L3_Fi3]
+[Line: Top_Part_LP0001_L1]
+	
+	Space Top		: 9
+	Field			: Top_Part_LP0001_L1_Fi1
+	
+[Field: Top_Part_LP0001_L1_Fi1]
 	
 	Set as			: "Issued To:"
 	Style			: Normal Bold
+	Align			: Right
 	Width			: 15
+	
+[Line: Top_Part_LP0001_L2]
+	
+	Space Top		: 0.50
+	Field			: Top_Part_LP0001_L2_Fi2
+	
+[Field: Top_Part_LP0001_L2_Fi2]
+	
+	Set as			: $PartyName
+	Width			: 18.50
 	Align			: Right
 	
-[Field: Top_Part_0001_L3_Fi04]
+[Line: Top_Part_LP0001_L3]
 	
-	Set as			: "INVOICE NO :           01234"
-	Space Left		: 53
-	Align			: Left
+	Space Top		: 0.50
+	Field			: Top_Part_LP0001_L3_Fi3
+	
+[Field: Top_Part_LP0001_L3_Fi3]
+	
+	Set as			: $PartyMailingName
+	Width			: 18.50
+	Align			: Right
+	
+[Line: Top_Part_LP0001_L4]
+	
+	Space Top		: 0.50
+	Space Bottom	: 4
+	Field			: Top_Part_LP0001_L4_Fi4
+	
+[Field: Top_Part_LP0001_L4_Fi4]
+	
+	Use				: Name Field
+	Set as			: $Address
+	Width			: 35
+	;Indent			: 4.99
+	Delete			: Style       	: large Bold
+	
+	
+[part: Top_Patr_RP0001] 
+	
+	Line			: Top_Patr_RP0001_L1,Top_Patr_RP0001_L2,Top_Patr_RP0001_L3
+	
+[Line: Top_Patr_RP0001_L1]
+	
+	Space Top		: 9
+	Field			: Top_Patr_RP0001_L1_Fi1,Top_Patr_RP0001_L1_Fi2
+	
+[Field: Top_Patr_RP0001_L1_Fi1]
+	
+	Use				: Name Field
+	Set as			: "Invoice	        :"
+	Width			: 10
+	Indent			: 0.1
 	Style			: Normal Bold
 	
-;[Field: Top_Part_0001_L3_Fi004]
-;
-;	Set as			: "DATE   :"
-;	Width			: 19
+[Field: Top_Patr_RP0001_L1_Fi2]
+	
+	Use				: Name Field
+	Set				: $VoucherNumber
+	Style			: Normal Bold
+	
+
+[Line: Top_Patr_RP0001_L2]
+	
+	Space Top		: 0.50
+	Field			: Top_Patr_RP0001_L2_Fi2,Top_Patr_RP0001_L2_Fi3
+	
+[Field: Top_Patr_RP0001_L2_Fi2]
+	
+	Use				: Name Field
+	Set as			: "DATE          :"
+	Width			: 13
+	Indent			: 1
+	Delete			: Style       : Normal Bol
+	
+[Field: Top_Patr_RP0001_L2_Fi3]
+	
+	Use				: Name Field 
+	Set as			: $Date
+	Width			: 19
+	Indent			: 1
+	Delete			:  Style       : Normal Bold
+	
+
+[Line: Top_Patr_RP0001_L3]
+	
+	Space Top		: 0.50
+	Field			: Top_Patr_RP0001_L3_Fi3,Top_Patr_RP0001_L3_Fi4
+	
+[Field: Top_Patr_RP0001_L3_Fi3]
+	
+	Use				: Name Field
+	Set as			: "DUE DATE         :"
+	Width			: 12
+	Indent			: 1
+	Delete			:   Style       : Normal Bold
+	
+[Field: Top_Patr_RP0001_L3_Fi4]
+	
+	Use				: Name Field
+	Set as			: $Date
+	Indent			: 2.50 	
+	Delete			: Style      	: Normal Bold
+
+;[Line: Top_Part_0001_L1]
+;	
+;	Space Top		: 5
+;	Field			: Top_Part_0001_L1_Fi1
+;	
+;[Field: Top_Part_0001_L1_Fi1]
+;	
+;	Set as			: $companyName
+;	Align			: Center
+;	Full Width		: Yes
+;	Style			: /*Large Bold*/ Large Serif Bold
+;;	Width			: 80
+;	;Space Left		: 66
+;	
+;	
+;[Line: Top_Part_0001_L2]
+;	
+;	Space Bottom	: 3
+;	Field			: Top_Part_0001_L2_Fi2
+;	
+;[Field: Top_Part_0001_L2_Fi2]
+;	
+;	Set as			: "D e s i g n   &  B r a n d i n g"
+;	Align			: Center
+;	Full Width		: Yes
+;	Style			: Small Serif Bold
+;	;Width			: 80
+	
+;[Line: Top_Part_0001_L3]
+;	
+;	Space Top		: 5
+;	Field			: Top_Part_0001_L3_Fi3,;Top_Part_0001_L3_Fi04,/*Top_Part_0001_L3_Fi004*/
+;	
+;[Field: Top_Part_0001_L3_Fi3]
+;	
+;	Set as			: "Issued To:"
+;	Style			: Normal Bold
+;	Width			: 15
 ;	Align			: Right
-				
-[Line: Top_Part_0001_L4]
-	
-	Space Top		: 0.10
-	Field			: Top_Part_0001_L4_Fi4,Top_Part_0001_L4_Fi04
-	
-[Field: Top_Part_0001_L4_Fi4]
-	
-	Set as			: "Jonathan Patterson"
-	Width			: 20.80
-	Align			: Right
-	;Style			: Normal Bold
-	
-[Field: Top_Part_0001_L4_Fi04]
-	
-	Set as			: "DATE  :      11.02.2030"
-	Space Left		: 52
-	Align			: Right
-	
-[Line: Top_Part_0001_L5]
-	
-	Space Top		: 0.10
-	Field			: Top_Part_0001_L5_Fi5,Top_Part_0001_L5_Fi05
-	
-[Field: Top_Part_0001_L5_Fi05]
-	
-	Set as			: "DUE DATE:      11.03.2030"
-	Space Left		: 54
-	Align			: Right
-	
-[Field: Top_Part_0001_L5_Fi5]
-	
-	Set as			: "Liceria & Co."
-	Width			: 15.91
-	Align			: Right
-	
-[Line: Top_Part_0001_L6]
-	
-	Space Top		: 0.10
-	Space Bottom	: 10
-	Field			: Top_Part_0001_L6_Fi6
-	
-[Field: Top_Part_0001_L6_Fi6]
-	
-	Set as			: "123 Anywhere St., Any City"
-	Width			: 26
-	Align			: Right
-	
+;	
+;;[Field: Top_Part_0001_L3_Fi04]
+;;	
+;;	Set as			: "INVOICE NO :          01234"
+;;	Space Left		: 75
+;;	Align			: Left
+;;	Style			: Normal Bold
+;	
+;;[Field: Top_Part_0001_L3_Fi004]
+;;
+;;	Set as			: "DATE   :"
+;;	Width			: 19
+;;	Align			: Right
+;				
+;[Line: Top_Part_0001_L4]
+;	
+;	Space Top		: 0.10
+;	Field			: Top_Part_0001_L4_Fi4;,Top_Part_0001_L4_Fi04
+;	
+;[Field: Top_Part_0001_L4_Fi4]
+;	
+;	Set as			: $PartyName
+;	Width			: 22
+;	Align			: Right
+;	;Style			: Normal Bold
+;	
+;;[Field: Top_Part_0001_L4_Fi04]
+;;	
+;;	Set as			: "DATE  :      11.02.2030"
+;;	Space Left		: 72.89
+;;	Align			: Right
+;	
+;[Line: Top_Part_0001_L5]
+;	
+;	Space Top		: 0.10
+;	Field			: Top_Part_0001_L5_Fi5,;Top_Part_0001_L5_Fi05
+;	
+;;[Field: Top_Part_0001_L5_Fi05]
+;;	
+;;	Set as			: "DUE DATE :      11.03.2030"
+;;	Space Left		: 75.50
+;;	Align			: Right
+;	
+;[Field: Top_Part_0001_L5_Fi5]
+;	
+;	Set as			: $PartyMailingName
+;	Width			: 16
+;	Align			: Right
+;	
+;[Line: Top_Part_0001_L6]
+;	
+;	Space Top		: 0.10
+;	Space Bottom	: 10
+;	Field			: Top_Part_0001_L6_Fi6
+;	
+;[Field: Top_Part_0001_L6_Fi6]
+;	
+;	Set as			: $Address
+;	Width			: 28.50
+;	Align			: Right
+;	
+;[Part: Top_Patr_RP0001]
+;	
+;	Line			: Top_Patr_RP0001_L1
+;	
+;[Line: Top_Patr_RP0001_L1]
+;	
+;	Space Top		: 14
+;	Field			: Top_Patr_RP0001_L1_Fi1
+;	
+;[Field: Top_Patr_RP0001_L1_Fi1]
+;	
+;	Set as			: "Invoice"
+;	Align			: Right
+;	Full Width		: Yes
+;	Width			: 40.50	
 [Part: Part_00001]
 	
 	Part			: Part_DS_001
@@ -136,36 +307,57 @@
 	Height			: 25.90 % Page
 	Width			: 100 % Page
 	Border			: Thin Box
-	Line			: Part_00001_L1,Part_00001_L2,Part_00001_L3,Part_00001_L4,Part_00001_L5,Part_00001_L6,;Part_00001_L7
+	Line			: Part_00001_L1,Part_00001_L2
 	Common Border	: Yes
+	Vertical		: Yes
+	Scroll			: Vertical
+	Float			: No
+;	Line			: Line_Name
+	Repeat			: Part_00001_L2: Inventory Entries
+	Total			: Part_00001_L2_Fi4
 	
 [Line: Part_00001_L1]
 	
 	Space Top		: 1
-	Field			: Part_00001_L1_Fi1,Part_00001_L1_Fi2,Part_00001_L1_Fi3,Part_00001_L1_Fi4
+	Field			: Part_00001_L1_Fi1,Part_00001_L1_Fi2,Part_00001_L1_Fi5,Part_00001_L1_Fi3,Part_00001_L1_Fi4
 	Space Bottom	: 0.9
 	Border			: Thin Bottom
 	
 [Field: Part_00001_L1_Fi1]
 	
 	Set as			: "DESCRIPTION"
-	Width			: 18
+	Width			: 57
 	Align			: Center
 	Style			: Normal Bold
 	Border			: Thin Right
+	Full Width		: Yes
+	
 	
 [Field: Part_00001_L1_Fi2]
 	
 	Set as			: "UNIT PRICE"
-	Space Left		: 19
-	Align			: Center
+;	Space Left		: 19
+	Width			: 20
+	Align			: Centre
 	Style			: Normal Bold
 	Border			: Thin Right
+	
+[Field: Part_00001_L1_Fi5]
+	
+	;Use				: Name Field
+	
+	Set as			: "Rate" 
+	Border			: Thin Right
+	Align			: Center
+	Width			: 30
+	Style			: Normal Bold
+
 	
 [Field: Part_00001_L1_Fi3]
 	
 	Set as			: "QTY"
-	Space Left		: 13
+;	Space Left		: 13
+	Width			: 20
 	Align			: Center
 	Style			: Normal Bold
 	Border			: Thin Right
@@ -173,7 +365,9 @@
 [Field: Part_00001_L1_Fi4]
 	
 	Set as			: "TOTAL"
-	Space Left		: 15
+;	Space Left		: 15
+	Align			: Center
+	Width			: 30
 	Style			: Normal Bold
 	
 	
@@ -182,31 +376,44 @@
 	Space Top		: 1.50
 	Space Bottom	: 0.50
 	Border			: Thin Bottom
-	Field			: Part_00001_L2_Fi1,Part_00001_L2_Fi2,Part_00001_L2_Fi3,Part_00001_L2_Fi4
+	Field			: Part_00001_L2_Fi1,Part_00001_L2_Fi2,part_00001_L2_Fi02,Part_00001_L2_Fi3,Part_00001_L2_Fi4
 	
 [Field: Part_00001_L2_Fi1]
 	
-	Set as			: "Brand Consultation"
-	Width			: 17
-	Align			: Right
+	Set as			: $StockItemName
+	Width			: 10
+	Full Width		: Yes
+	Align			: Center
+	;Indent			: 0.50
 	
 [Field: Part_00001_L2_Fi2]
-	
+		
 	Set as			: "100"
 	Space Left		: 23
+	Width			: 20
+	Align			: Center
+	
+[Field: part_00001_L2_Fi02]
+	
+	Set as			: $rate
+	Width			: 15
 	Align			: Right
+	
 	
 [Field: Part_00001_L2_Fi3]
 	
-	Set as			: "1"
-	Space Left		: 17.50
+	Set as			: $BILLEDQTY
+	Space Left		: 18
+	Width			: 5
 	Align			: Right
 	
 [Field: Part_00001_L2_Fi4]
 	
-	Set as			: "$ 100"
+	Set as			: $Amount
 	Space Left		: 16.90
+	Width			: 23
 	Align			: Right
+	Use				: Amount Field
 	
 [Line: Part_00001_L3]
 	
@@ -219,12 +426,14 @@
 	
 	Set as			: "Logo Design"
 	Width			: 14
+	Full Width		: Yes
 	Align			: Right
 	
 [Field: Part_00001_L3_Fi2]
 	
 	Set as			: "100"
 	Space Left		: 25.99
+	Width			: 20
 	Align			: Right
 	
 [Field: Part_00001_L3_Fi3]
@@ -235,10 +444,10 @@
 	
 [Field: Part_00001_L3_Fi4]
 	
-	Set as			: "$ 100"
+	Set as			: " $ 100"
 	Space Left		: 16.90
 	Align			: Right
-	
+	Width			: 23
 [Line: Part_00001_L4]
 	
 	Space Top		: 1.50
@@ -250,12 +459,14 @@
 	
 	Set as			: "Website Design"
 	Width			: 15
+	Full Width		: Yes
 	Align			: Right
 	
 [Field: Part_00001_L4_Fi2]
 	
 	Set as			:"100"
 	Space Left		: 25
+	Width			: 20
 	Align			: Right
 	
 [Field: Part_00001_L4_Fi3]
@@ -269,6 +480,7 @@
 	Set as			: "$ 100"
 	Space Left		: 16.90
 	Align			: Right
+	Width			: 23
 	
 [Line: Part_00001_L5]
 	
@@ -281,12 +493,14 @@
 	
 	Set as			: "Social Media Templates"
 	Width			: 17
+	Full Width		: Yes
 	Align			: Right
 	
 [Field: Part_00001_L5_Fi2]
 	
 	Set as			: "100"
 	Space Left		: 23
+	Width			: 20
 	Align			: Right
 	
 [Field: Part_00001_L5_Fi3]
@@ -300,6 +514,7 @@
 	Set as			: "$ 100"
 	Space Left		: 16.90
 	Align			: Right
+	Width			: 23
 	
 [Line: Part_00001_L6]
 	
@@ -313,12 +528,14 @@
 	
 	Set as			: "Brand Manual"
 	Width			: 14.50
+	Full Width		: Yes
 	Align			: Right
 	
 [Field: Part_00001_L6_Fi2]
 	
 	Set as			: "100"
 	Space Left		: 25.50
+	Width			: 20
 	Align			: Right
 	
 [Field: Part_00001_L6_Fi3]
@@ -332,40 +549,71 @@
 	Set as			: "$ 100"
 	Space Left		: 16.50
 	Align			: Right
-	Align			: Right
+	Width			: 23
+
 	
 	
 [Part: Part_00002]
 	
+	Left Part		: Part_00002_LP1
+	Right Part		: Part_00002_RP1
+	
+[Part: Part_00002_LP1]
+	
 	Height			: 3.50 % Page
 	Width			: 100 % Page
-	Border			: Thin Bottom
+	;Border			: Thin Bottom
 	Line			: Part_00002_L1,;Part_00002_L2
 	
 [Line: Part_00002_L1]
 	
 	Space Top		: 1
-	Field			: Part_00002_L1_Fi1,Part_00002_L1_Fi2
-	Border			: Thin Left
+	Field			: Part_00002_L1_Fi1,;Part_00002_L1_Fi2
+	;Border			: Thin Left
 	
 [Field: Part_00002_L1_Fi1]
 	
+	Use				: Name Field
 	Set as			: "SUBTOTAL"
-	Width			: 14
-	Align			: Right
-	Style			: Normal Bold
+	;Width			: 14
+	;Align			: Right
+	;Style			: Normal Bold
 	
-[Field: Part_00002_L1_Fi2]
+[Part: Part_00002_RP1]
 	
-	Set as			: "$500"
-	Space Left		: 64.80
-	Align			: Right
-	Style			: Normal Bold
-	Space Right		: Thin Right
+	Line			: Part_00002_RP1_L1_Fi1
+	;Repeat			: Part_00002_RP1_L1_Fi1	: Inventory Entries
+
+[Line: Part_00002_RP1_L1_Fi1]
+	
+	Space Top		: 1
+	Field			: Part_00002_RP1_L1_Fi1
+	
+[Field: Part_00002_RP1_L1_Fi1]
+	
+	Use         	: Amount Field
+	Set as			: $$Total:Part_00001_L2_Fi4	
+	Width			: 10
+	;Set as			: "1000"
+	
+;[Field: Part_00002_L1_Fi2]
+;	
+;	Set as			: $Totals
+;;	Space Right		: 20	
+;	Width			: 109.50
+;	Align			: Right
+;	Style			: Normal Bold
+;	;Space Right		: Thin Right
+;	Full Width		: Yes
 	
 [Part: Part_00003]
 	
-	Line		: Part_00003_L1
+	Right Part	: Part_00003_RP1,
+	
+[Part: Part_00003_RP1]
+	
+	Line		: Part_00003_L1,Part_00003_L2,;Part_00003_L3
+	;Repeat		: Part_00003_L1_Fi2: Inventory Entries
 	
 [Line: Part_00003_L1]
 	
@@ -374,50 +622,231 @@
 	
 [Field: Part_00003_L1_Fi1]
 	
-	Set as		: "TAX"
-	Width		: 75
+	Use			: Medium Prompt	
+	Set as		: $$LocaleString:$LedgerEntries[1,($$IsSysNameEqual:CGST:($GSTDutyHead:Ledger:$LedgerName))].LedgerName
+	Width		: 10
+	Indent		: 5
+	Delete		:  Style       : Normal Bold
 	Align		: Right
-	
-	
+;	Full Width	: Yes
+;	
 [Field: Part_00003_L1_Fi2]
 	
-	Set as		: "10 %"
-	Space Left	: 4.50
-	Align		: Right
+	Use			: Amount Field
+	Set as		: $$AsAmount:$LedgerEntries[1,($$IsSysNameEqual:CGST:($GSTDutyHead:Ledger:$LedgerName))].Amount
+;	If $$CollectionField:$ledgername:1:LedgerEntries Contains "CGST" Then $Amount +
+;				  Else If $$CollectionField:$ledgername:2:LedgerEntries Contains "CGST" Then $Amount +
+;				  Else If $$CollectionField:$ledgername:3:LedgerEntries Contains "CGST" Then $Amount +
+;				  Else ""
+;	$$String:$AccountingAllocations[1,($$IsSysNameEqual:CGST:($GSTDutyHead:Ledger:$LedgerName))].LedgerName;"10 %"
+	;Set as		: $GSTRate;$GSTRegistrationType;GSTRegistrationType : @LedPartyGSTRegType	;: (NOT $$IsEmpty:##vVchPartyName AND NOT $$IsMethodChangedDuringImport:GSTRegistrationType)
+	;Width		: 7
+	;Invisible	: NOT ##vShowGSTRateBreakup
 	
-[Part: Bottom_part0001]
+;[Variable: vShowGSTRateBreakup]
+;
+;	Type	: Logical
+
+
+
+[System : Formula]
 	
-	Line		: Bottom_part0001_L1,Bottom_part0001_L2
+
+	CGST   :$ledgername contains "IGST"
+;	CGST1	: String	: 2010
+;	
+;	SGST	: String	: 2011
+;	
+;	IGST	: String	: 2012
 	
-[Line: Bottom_part0001_L1]
+	
+[Line: 	Part_00003_L2]
 	
 	Space Top	: 1
-	Field		: Bottom_part0001_L1_Fi1,Bottom_part0001_L1_Fi2
+	Field		: Part_00003_L2_Fi2,Part_00003_L2_Fi02
 	
-[Field: Bottom_part0001_L1_Fi1]
+[Field: Part_00003_L2_Fi2]
 	
+	Use			: Medium Prompt
+	Set as		: "SGST";$$LocaleString:$LedgerEntries[1,($$IsSysNameEqual:CGST:($GSTDutyHead:Ledger:$LedgerName))].LedgerName
+	Width		: 10
+	Indent		: 5
+	Delete		: Style       : Normal Bold
+	
+[Field: Part_00003_L2_Fi02]
+	
+	Use			: Amount Field
+	Set as		: $$AsAmount:$LedgerEntries[1,($$IsSysNameEqual:CGST:($GSTDutyHead:Ledger:$LedgerName))].Amount
+;	Space Left	: 79	
+;	Align		: Right
+;	Full Width	: Yes
+
+[Line: Part_00003_L3]
+	
+	Space Top	: 1
+	Field		: Part_00003_L3_Fi1,Part_00003_L3_Fi2
+	
+[Field: Part_00003_L3_Fi1]
+	
+	Use			: Medium Prompt
+	Set as		: "IGST"
+	Width		: 10
+	Indent		: 5
+
+[Field: Part_00003_L3_Fi2]
+	
+	Use			: Name Field
+	Set as		: "10%"
+	
+;[System:Formula]
+;	
+;	IGST   :$ledgername contains "IGST"	
+;
+;[Collection:if $$FullList:Allledgerentries:$ledgername contains "IGST" then  $ledgerentries[1,@@IGST].amount else ""]
+;	
+;	;Space right	: 100 % Page
+;	
+;[Field: Part_00003_L2_Fi02]
+;	
+;	Set as		: "$ 500"
+;	Align		: Right
+;
+;[Collection:]
+;	
+;if $$FullList:Allledgerentries:$ledgername contains "IGST" then  $ledgerentries[1,@@IGST].amount else ""
+;
+;[System:Formula]
+;	
+;	IGST   :$ledgername contains "IGST"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+[Part: Bottom_part00011]
+	
+	Left Part	: Part_LP1
+	Right Part	: Part_RP1
+	
+[Part: Part_LP1]
+	
+	Line		: Bottom_part0001_L01,Bottom_part0001_L02,Bottom_part0001_L03,Bottom_part0001_L04
+	
+[Line: Bottom_part0001_L01]
+	
+	Space Top	: 1
+	Field		: Bottom_part0001_L01_Fi01;,Bottom_part0001_L1_Fi02
+	
+[Field: Bottom_part0001_L01_Fi01]
+	
+	Use			: Name Field
 	Set as		: "BANK DETAILS"
-	Width		: 15
-	Align		: Right
-	Style		: Normal Bold
+	Indent		: 5
+	Width		: 20
 	
-[Field: Bottom_part0001_L1_Fi2]
-	
-	Set as		: "THANK YOU"
-	Align		: Right
-	Space Left	: 75
-	Style		: Normal Bold
-	
-[Line: Bottom_part0001_L2]
+[Line: Bottom_part0001_L02]
 	
 	Space Top	: 0.50
 	Field		: Bottom_part0001_L2_Fi2
-	
+		
 [Field: Bottom_part0001_L2_Fi2]
 	
+	Use			: Name Field
 	Set as		: "Borcele Bank"
-	Width		: 12.80
-	Align		: Right
+	Indent		:  5
+	Width		:  20
+	Delete		:  Style       : Normal Bold
+	;Align		: Right
+
+	
+[Line: Bottom_part0001_L03]
+	
+	Space Top	: 0.50
+	Field		: Bottom_part0001_L3_Fi4,Bottom_part0001_L3_Fi04
+	
+[Field: Bottom_part0001_L3_Fi4]
+	
+	Use			: Name Field 
+	Set as		: "Account Name :"
+	Width		: 20
+	Indent		: 5
+	Delete		:  Style       : Normal Bold
+	;Align		: Right
+	
+
+[Field: Bottom_part0001_L3_Fi04]
+	
+	Use			: Name Field
+	Set as		: $BankAccHolderName:Ledger:@@VchBankName;$BankAccHolderName
+	Width		: 15
+	;Indent		: 5
+	
+[Line: Bottom_part0001_L04]
+	
+	Space Top	: 0.50
+	Field		: Bottom_part0001_L04_Fi4,Bottom_part0001_L04_Fi04
+	
+[Field: Bottom_part0001_L04_Fi4]
+	
+	Use			: Name Field
+	Set as		: "Account No .:"
+	Width		: 15
+	Indent		: 5
+	Delete		:  Style       : Normal Bold
+	;Align		: Right
+	
+[Field: Bottom_part0001_L04_Fi04]
+	
+	Use			: Name Field 
+	Set as		: $BankDetails:Ledger:@@VchBankName
+	Width		: 20
+	Indent		: 5.50
+	
+[Part: Part_RP1]
+	
+	Line		: Part_RP1_L1
+	
+[Line: Part_RP1_L1]
+	
+	Space Top	: 1
+	Field		: Part_RP1_L1_Fi1
+	
+[Field: Part_RP1_L1_Fi1]
+	
+	Use			: Name Field 
+	Set as		: "THANK YOU"
+	
+	
+	
+
+	
+	
 	
 
 
@@ -443,7 +872,16 @@
 
 
 
-
+;Align		: Right
+	;Style		: Normal Bold
+	
+;[Field: Bottom_part0001_L1_Fi02]
+;	
+;	Set as		: "THANK YOU"
+;	Align		: Right
+;	Space Left	: 75
+;	Style		: Normal Bold
+	
 
 ;[Line: Part_00002_L2]
 ;	
@@ -471,7 +909,7 @@
 ;	
 ;	Set as			: "SUBTOTAL"
 ;	Width			: 15
-;	
+;	@@VCHRateWidth
 
 	
 	
